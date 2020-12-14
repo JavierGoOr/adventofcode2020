@@ -1,0 +1,1 @@
+cat input | sed "s/^$/ ,/g" | tr \\n ' ' | tr , \\n | sed "s/^ //g" | awk -F'[: ]' '{s=$1; for(i=3; i<=NF; i+=2) {s=s " " $i} print s}'| grep '\bbyr\b' | grep '\becl\b' | grep '\beyr\b' | grep '\bhcl\b' | grep '\bhgt\b' | grep '\biyr\b' | grep '\bpid\b' | wc -l
